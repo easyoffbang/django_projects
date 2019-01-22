@@ -43,5 +43,5 @@ def excel_download(request):
 
     with open(filepath, 'rb') as f:
         response = HttpResponse(f, content_type="application/vnd.ms-excel")
-        response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename)
+        response['Content-Disposition']   = 'attachment; filename="{}"'.format(filename)
         return response
