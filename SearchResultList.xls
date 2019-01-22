@@ -1,0 +1,75 @@
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>검색결과 엑셀 출력 |  언더우드기념도서관</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+		
+		<table id="briefTable" summary="이 표는 검색결과 테이블 입니다." class="briefDataTable" cellspacing="0" cellpadding="0" border="1">
+			<caption align="left">
+				<span class="gray_12w">검색어</span>
+				<span class="Gfirebrick_12w">[입수시기 14일]</span><br/>
+				
+				
+				총 <strong>0</strong>건 중 <strong>0</strong>건 출력
+			</caption>
+			<thead>
+				<tr>
+					<th scope="col">No.</th>
+					<th scope="col">자료 유형</th>
+					<th scope="col">서명</th><th scope="col">저자</th><th scope="col">출판사</th><th scope="col">출판년</th>
+					<th scope="col">수록 매체</th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+
+
+
+			</tbody>
+		</table>
+	
+	<table id="divNoResult" class="briefData" style="text-align: center;">
+		<tr><td>검색 결과가 없습니다.</td></tr>
+	</table>
+	
+	
+
+
+</body>
+</html>
