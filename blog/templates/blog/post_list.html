@@ -10,6 +10,17 @@
         <p>
             안녕하세요. 여러분의 파이썬/장고 페이스메이커가 되어드리겠습니다.
         </p>
+        <ul>
+            {%  for post in post_list %}
+            <li>
+                {{ post.id }}
+                {{ post.title }}
+                <small>by {{ post.author }}</small>
+                <small>at {{ post.updated_at }}</small>
+            </li>
+            {% endfor %}
+
+        </ul>
     </body>
 </html>
 
