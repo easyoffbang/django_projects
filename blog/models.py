@@ -1,4 +1,13 @@
 from django.db import models
+import re
+from django.forms import ValidationError
+
+
+def lnglat_validator(value):
+    if not re.match(r'^([+-]?\d+\.?\d*), ([+-]?\d+\.?\d*)$', value):
+        raise ValidationError('Invalid LngLat Type')
+
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name='제목',                      #길이제한이 있는 문자열 -  값필요
@@ -9,7 +18,11 @@ class Post(models.Model):
             ('제목3', '제목3 레이블'),
         ))
     content = models.TextField(verbose_name='내용')                                  #길이제한이 없는 문자열 -  값필요
+    tags = models.CharField(max_length=100, blank=True)
+    lnglat = models.CharField(max_length=50, blank=True,
+        validators=[lnglat_validator],
+        help_text='경도,위도 포맷으로 입력')
     created_at = models.DateTimeField(auto_now_add=True)          #자동으로 부여
     updated_at = models.DateTimeField(auto_now=True)              #자동으로 부여
 
-# Create your models here.
+
