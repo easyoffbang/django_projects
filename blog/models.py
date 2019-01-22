@@ -32,6 +32,10 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)          #자동으로 부여
     updated_at = models.DateTimeField(auto_now=True)              #자동으로 부여
 
+    class Meta:
+        ordering = ['-id']
+
+
     def __str__(self):
         return self.title
 
