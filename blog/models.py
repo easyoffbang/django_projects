@@ -8,7 +8,6 @@ def lnglat_validator(value):
         raise ValidationError('Invalid LngLat Type')
 
 
-
 class Post(models.Model):
     STATUS_CHOICES = (
         ('d', 'Draft'),
@@ -18,7 +17,7 @@ class Post(models.Model):
 
     author = models.CharField(max_length=20)
     title = models.CharField(max_length=100, verbose_name='제목',                      #길이제한이 있는 문자열 -  값필요
-        help_text='포스팅 제목을 입력해주세요. 최대 100자 내외.',)
+        help_text='포스팅 제목을 입력해주세요. 최대 100자 내외.')
         #choices = (
             #('제목1', '제목1 레이블'),   #('저장될 값', 'UI에 보여질 레이블')
             #('제목2', '제목2 레이블'),
@@ -35,8 +34,5 @@ class Post(models.Model):
     class Meta:
         ordering = ['-id']
 
-
     def __str__(self):
         return self.title
-
-
