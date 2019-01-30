@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Tag
 from django.utils.safestring import mark_safe
 # Register your models here.
 
@@ -30,7 +30,11 @@ class PostAdmin(admin.ModelAdmin):
 
 #admin.site.register(Post, PostAdmin)
 
-@admin.register(Comment)
+@admin.register(Comment)  #모델 등록하고 admin에 등록하기
 class CommentAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name']
 
