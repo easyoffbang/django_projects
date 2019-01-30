@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 from django.utils.safestring import mark_safe
 # Register your models here.
 
@@ -29,3 +29,8 @@ class PostAdmin(admin.ModelAdmin):
     make_withdrawn.short_description = '지정포스팅을 withdrawn상태로 변경합니다.'
 
 #admin.site.register(Post, PostAdmin)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
+
