@@ -5,6 +5,8 @@ from . import views_cbv
 app_name = 'dojo'
 
 urlpatterns = [
+    path('new/', views.post_new),
+
     re_path(r'^hello/(?P<name>[ㄱ-힣]+)/(?P<age>\d+)/$', views.hello),
     re_path(r'^list1/$', views.post_list1),
     re_path(r'^list2/$', views.post_list2),
