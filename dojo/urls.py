@@ -2,6 +2,8 @@ from django.urls import path, include, re_path
 from . import views
 from . import views_cbv
 
+app_name = 'dojo'
+
 urlpatterns = [
     re_path(r'^hello/(?P<name>[ㄱ-힣]+)/(?P<age>\d+)/$', views.hello),
     re_path(r'^list1/$', views.post_list1),
