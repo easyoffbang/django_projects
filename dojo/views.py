@@ -12,25 +12,9 @@ def post_new(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = Post()
-            #방법 1
-            '''
-            #post.title = form.cleaned_data['title']
-            #post.content = form.cleaned_data['content']
-            #post.save()
-            '''
-            #방법 2
-            '''
-            post = Post(title=form.cleaned_data['title'],
-                        content = form.cleaned_data['content'])
-            '''
-            #방법 3
-            '''
-            post=Post.objects.create(title=form.cleaned_data['title'],
-                                    contene = form.cleaned_data['content'])
-            '''
-            #방법 4
-            post = Post.objects.create(**form.cleaned_data)
+            post=form.save(commit=False)
+            post.ip = request.META['REMOTE_ADDR']
+            post.save()
             return redirect('/dojo/')  #namespace:name사용
     else:
         form = PostForm()
