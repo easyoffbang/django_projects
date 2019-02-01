@@ -41,7 +41,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail', args=[self.id])
+        return reverse('blog:post_detail', args=[self.id])     #내용submit
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
