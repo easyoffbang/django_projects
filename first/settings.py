@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'dojo',
+    'accounts',
     'django_extensions',
     'debug_toolbar',
+    'shop',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,9 @@ ROOT_URLCONF = 'first.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'first','templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
