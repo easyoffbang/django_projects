@@ -6,3 +6,6 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'content']
         #유저로부터 입력받을 fields만 form에 적음
+        widgets = {
+            'user_agent':forms.HiddenInput
+        }

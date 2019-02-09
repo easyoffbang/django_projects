@@ -13,6 +13,7 @@ class Post(models.Model):
     content = models.TextField()
     # db에 저장되는 파일의 타입 TEXTFIELD
     ip = models.CharField(max_length=15)
+    user_agent = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
