@@ -25,6 +25,7 @@ class Post(models.Model):
             #('제목2', '제목2 레이블'),
             #('제목3', '제목3 레이블'),
     content = models.TextField(verbose_name='내용')                                  #길이제한이 없는 문자열 -  값필요
+    photo = models.ImageField(blank=True)
     tags = models.CharField(max_length=100, blank=True)
     lnglat = models.CharField(max_length=50, blank=True,
         validators=[lnglat_validator],
