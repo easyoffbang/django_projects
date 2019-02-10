@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
          <meta charset="utf-8" />
@@ -8,6 +9,7 @@
     {# <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> #}
     {# <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" /> #}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
     <!-- bootstrap: cosmo theme -->
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" /> -->
 
@@ -48,6 +50,16 @@
             </div>
         </div>
     </nav>
+    {% if messages %}
+    <div class="messages">
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+    {{ message.message }}
+    </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
        <div id="page-footer">
