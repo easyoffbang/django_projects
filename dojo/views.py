@@ -6,7 +6,14 @@ from .forms import PostForm
 from .models import Post
 
 
+
 # Create your views here.
+def post_detail(request, id):
+    post =get_object_or_404(Post, id=id)
+    return render(request, 'dojo/post_detail.html', {
+        'post':post,
+    })
+
 
 def post_new(request):
     if request.method == 'POST':
